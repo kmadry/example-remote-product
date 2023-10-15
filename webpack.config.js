@@ -6,7 +6,7 @@ module.exports = {
     entry: "./src/entry.js",
     mode: "development",
     devServer: {
-        port: 3002,
+        port: 3003,
     },
     module: {
         rules: [
@@ -45,11 +45,10 @@ module.exports = {
             template: "./public/index.html",
         }),
         new ModuleFederationPlugin({
-            name: "ExampleRemoteSite",
+            name: "ExampleRemoteProduct",
             filename: "remoteEntry.js",
             exposes: {
-                "./Content": "./src/App",
-                "./routes": "./src/routes",
+                "./routes": "./src/productRoutes",
             },
             shared: {
               ...dependencies,
